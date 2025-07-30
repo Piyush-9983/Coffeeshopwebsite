@@ -7,6 +7,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* Colors */
 --white-color: #fff;
@@ -305,6 +309,138 @@ header .navbar {
     border-radius: var(--border-radius-circle);
   }
 
+  /* gallery section */
+
+  .gallery-section {
+    padding: 50px 0 100px;
+  }
+  
+  .gallery-section .gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  
+  .gallery-section .gallery-list .gallery-item {
+  overflow: hidden;
+  border-radius: var(--border-radius-s);
+  width: calc(100% / 3 - 32px);
+}
+
+.gallery-section .gallery-item .gallery-image {
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+  transition: 0.3s ease;
+}
+
+.gallery-section .gallery-item:hover .gallery-image {
+    transform: scale(1.3);
+  }
+
+
+  /* contact us  */
+  .contact-section {
+    padding: 50px 0 100px;
+    background: var(--light-pink-color);
+  }
+  
+  .contact-section .section-content {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row; /* Ensures horizontal layout */
+    flex-wrap: nowrap; /* Prevents stacking */
+  }
+  
+  .contact-section .contact-info-list {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: left;
+  }
+  
+  .contact-section .contact-info {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    align-items: center;
+  }
+  
+  .contact-section .contact-form {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .contact-section .form-input {
+    width: 100%;
+    height: 50px;
+    padding: 0 12px;
+    margin-bottom: 16px;
+    background: var(--white-color);
+    border: 1px solid var(--medium-gray-color);
+    border-radius: var(--border-radius-s);
+  }
+  
+  .contact-section .form-input:focus {
+    border-color: var(--secondary-color);
+  }
+  
+  .contact-section textarea.form-input {
+    height: 100px;
+    padding: 12px;
+    resize: vertical;
+  }
+  
+  .contact-section .submit-button {
+    padding: 10px 26px;
+    color: var(--white-color);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-medium);
+    background: var(--primary-color);
+    border-radius: var(--border-radius-m);
+  }
+ 
+
+
+/* footer section */
+.footer-section {
+    padding: 20px 0;
+    background: var(--dark-color);
+  }
+  
+  .footer-section .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .footer-section :where(.copyright-text, social-link, .policy-link) {
+    color: var(--white-color);
+    transition: 02s ease;
+  }
+
+  .footer-section .social-link-list {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .footer-section .social-link-list .social-link {
+    font-size: var(--font-size-l);
+  }
+  
+  .footer-section .social-link-list .social-link:hover,
+  .footer-section .policy-text .policy-link:hover {
+    color: var(--secondary-color);
+  }
+  
+  .footer-section .policy-text .separator {
+    margin: 0 5px;
+    color: var(--white-color);
+  }
+
+
+
 
   /* Responsive media query code for max width 1024px */
 @media screen and (max-width: 1024px) {
@@ -395,7 +531,7 @@ header .navbar {
         justify-content: center;
       }
 
-      .hero-section .hero-details :is(.subtitle, description), .about section .about-deatils {
+      .hero-section .hero-details :is(.subtitle, description), .about section .about-deatils,.contact-section .contact-form {
         max-width: 100%;
       }
       
@@ -431,7 +567,17 @@ header .navbar {
       .menu-section .menu-list .menu-item .menu-image {
         max-width: 200px;
       }
+
+      .gallery-section .gallery-list .gallery-item {
+        width: calc(100% / 2 - 30px);
+      }
     }
+
+    .contact-section .section-content {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 48px;
+      }
 
 
   /* responsive media  query code for max width 640px */
@@ -440,8 +586,27 @@ header .navbar {
           gap: 60px;
         }
       
-        .menu-section .menu-list .menu-item {
+        .menu-section .menu-list .menu-item ,.gallery-section .gallery-list .gallery-item {
           width: 100%;
+        }
+        .footer-section .section-content {
+            flex-direction: column;
+            gap: 20px;
+          }
+        
+        .contact-section .section-content {
+          flex-direction: column;
+          gap: 30px;
+        }
+        
+        .contact-section .contact-info-list {
+          flex: none;
+          max-width: 100%;
+        }
+        
+        .contact-section .contact-form {
+          flex: none;
+          max-width: 100%;
         }
       }
 
