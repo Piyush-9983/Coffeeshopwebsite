@@ -21,8 +21,6 @@
                 <h2 class="logo-text">☕ Coffee</h2>
             </a>
             <ul class="nav-menu">
-                
-
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
@@ -41,21 +39,22 @@
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a href="#login" class="nav-link" id="login-link">Login</a>
+                </li>
             </ul>
 
-            
+            <!-- Mobile menu buttons -->
+            <button id="menu-open-button" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button id="menu-close-button" class="menu-toggle">
+                <i class="fas fa-times"></i>
+            </button>
         </nav>
     </header>
 
-
-</body>
-
-<!-- header / Navbar -->
-<header>
-</header>
-
-
-<main>
+    <main>
     <!-- Hero section -->
     <section id="home" class="hero-section">
         <div class="section-content">
@@ -70,9 +69,7 @@
                     <a href="#contact" class="button contact-us">Contact Us</a>
                 </div>
             </div>
-            <div class="hero-image-wrapper">
-                <img src="images/coffee-2714970_1280.jpg" alt="" class="hero-image">
-            </div>
+
         </div>
     </section>
 
@@ -276,6 +273,8 @@
 
 
 
+
+
 </main>
 
 <!-- linking swiper script -->
@@ -284,6 +283,48 @@
 <!-- link custom script -->
 <script src="script.js"></script>
 
+<!-- Login Modal -->
+<div id="login-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        
+        <!-- Login Form -->
+        <div class="login-form" id="login-form">
+            <h2>Login</h2>
+            <form id="login-form-element">
+                <div class="form-group">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <p class="switch-text">Don't have an account? <a href="#" id="show-register">Register here</a></p>
+        </div>
+        
+        <!-- Register Form -->
+        <div class="register-form" id="register-form" style="display: none;">
+            <h2>Register</h2>
+            <form id="register-form-element">
+                <div class="form-group">
+                    <input type="text" id="register-name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register-password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register-confirm" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+            <p class="switch-text">Already have an account? <a href="#" id="show-login">Login here</a></p>
+        </div>
+    </div>
+</div>
 
 </body>
 
